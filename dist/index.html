@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output.css" />
+    <link rel="stylesheet" href="../src/css/style.css" />
+    <title>find job web site</title>
+  </head>
+  <body>
+    <section
+      class="relative flex h-42 w-full flex-col items-center justify-center bg-sky-600 shadow-2xl"
+    >
+      <div
+        class="badges absolute top-5 right-5 z-20 flex flex-col gap-y-2"
+      ></div>
+      <div class="mb-4 flex items-center ">
+        <a href="/dist/index.html" class="mr-5 text-2xl text-gray-100 hover:text-gray-300"
+          ><i class="fa fa-home" aria-hidden="true"></i
+        ></a>
+        <div class="flex items-center">
+          <i class="fa fa-book text-xl text-gray-200" aria-hidden="true"></i>
+          <div class="bookmarks-btn relative">
+            <p class="ml-2 text-gray-100">
+              bookmarks <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </p>
+            <div
+              class="bookmarks-box absolute top-8 right-[-80%] z-30 hidden h-70 w-50 overflow-y-auto rounded-md bg-gray-100 px-3 py-2 shadow-2xl md:right-[-110%] md:w-100"
+            >
+              <p
+                class="bookmark-start-text flex h-full items-center justify-center font-semibold text-gray-500"
+              >
+                noting bookmarks yet...
+              </p>
+              <div class="bookmarks flex flex-col gap-y-4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="search-form flex h-11 items-center justify-center">
+        <button
+          type="submit"
+          class="mr-1 h-12 w-12 rounded-md bg-gray-600 text-xl text-white transition-all hover:bg-gray-800"
+        >
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+        <input
+          type="text"
+          placeholder="enter job description ..."
+          class="search-input h-full w-[50vw] rounded-sm bg-gray-50 px-3 py-1 text-gray-700 shadow-md outline-0 transition-all sm:w-[350px] md:w-[500px]"
+        />
+      </form>
+    </section>
+    <div class="flex justify-center">
+      <section
+        class="card-section grid h-[calc(100vh-168px)] w-full shadow-xl sm:-mt-4 sm:h-[410px] sm:w-[620px] sm:grid-cols-30 sm:rounded-lg md:w-[740px] md:grid-cols-30 lg:h-[430px] lg:w-[900px]"
+      >
+        <div
+          class="flex h-[calc(100vh-171px)] flex-col justify-between bg-gray-50 px-4 shadow-xs sm:col-span-12 sm:h-[410px] sm:rounded-l-lg sm:px-2 md:col-span-11 lg:h-[430px]"
+        >
+          <div
+            class="flex h-11 w-full items-center justify-between border-b-2 border-b-gray-300 py-2 sm:h-20 sm:flex-col lg:h-11 lg:flex-row"
+          >
+            <p class="result-badge text-md font-semibold text-gray-700">
+              0 result
+            </p>
+            <div
+              class="sorting-btns flex items-center gap-x-1 sm:mt-1.5 sm:gap-x-2 lg:mt-0"
+            >
+              <i class="fa fa-filter text-gray-600" aria-hidden="true"></i>
+              <button
+                class="sorting-btn sorting-btn--relevant btn-clicked rounded-md px-2 py-1.5 text-sm font-semibold sm:px-3"
+              >
+                relevant
+              </button>
+              <button
+                class="sorting-btn sorting-btn--recent btn-not-clicked rounded-md px-2 py-1.5 text-sm font-semibold sm:px-3"
+              >
+                recent
+              </button>
+              <button
+                class="show show-job-information rounded-md border-2 border-gray-500 px-2 py-1 text-sm font-semibold text-gray-500 transition-all hover:bg-gray-500 hover:text-white sm:hidden sm:px-3"
+              >
+                show info
+              </button>
+            </div>
+          </div>
+          <div
+            class="loader loader-js mx-auto size-20 rounded-full border-4 border-gray-200 border-l-gray-500"
+          ></div>
+          <div
+            class="cards-list hidden h-full w-full flex-col gap-y-4 overflow-y-hidden py-2 sm:h-[calc(100%-124px)] lg:h-[calc(100%-88px)]"
+          >
+            <!-- item -->
+          </div>
+          <div
+            class="pagination-button-box flex h-11 justify-between border-t-2 border-t-gray-300 py-2"
+          >
+            <button
+              disabled
+              class="pagination-button pagination-button--prev flex items-center rounded-2xl bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-500 opacity-40 transition-all not-disabled:hover:bg-sky-500 not-disabled:hover:text-white"
+            >
+              <i class="fa fa-angle-left mr-1" aria-hidden="true"></i> page
+              <span class="pagination-number--prev ml-0.5">0</span>
+            </button>
+            <p class="number-page text-sm font-semibold text-neutral-500">
+              page 1
+            </p>
+            <button
+              class="pagination-button pagination-button--next flex items-center rounded-2xl bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-500 transition-all not-disabled:hover:bg-sky-500 not-disabled:hover:text-white"
+            >
+              page <span class="pagination-number--next ml-0.5">2</span>
+              <i class="fa fa-angle-right ml-1" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+        <div
+          class="job-information-box fixed top-0 left-0 hidden h-full w-full overflow-y-auto rounded-r-lg bg-gray-200 pb-5 sm:relative sm:col-span-18 sm:block md:col-span-19"
+        >
+          <button
+            class="exit-job-information absolute top-2 left-4 z-30 size-8 rotate-45 rounded-full bg-gray-600 text-xl text-white shadow-xl transition-all hover:bg-sky-500 sm:hidden"
+          >
+            <i class="fa fa-plus" aria-hidden="true"></i>
+          </button>
+          <!-- item informations -->
+          <div class="job-information">
+            <!-- job information -->
+          </div>
+          <!-- loading and start text -->
+          <div
+            class="information-start-text flex h-full items-center justify-center"
+          >
+            <div class="text-center">
+              <h3 class="text-xl font-bold text-gray-600">
+                what are you looking for ?
+              </h3>
+              <p
+                class="mt-2 w-65 text-center text-sm font-medium text-gray-500"
+              >
+                start by searching for any technology your idea job working with
+              </p>
+            </div>
+          </div>
+          <div class="loader-js hidden h-full items-center justify-center">
+            <div
+              class="loader mx-auto mt-12 size-24 rounded-full border-4 border-gray-300 border-l-gray-600"
+            ></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="../src/js/script.js" type="module"></script>
+  <script src="../src/js/all.js"></script>
+</html>

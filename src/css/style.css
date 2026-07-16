@@ -1,0 +1,95 @@
+body {
+  font-family: sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+.card-section {
+  transform: scale(1);
+  animation: cardScale 0.5s ease-in-out;
+}
+.error-badge {
+  transform: scale(1);
+  animation: cardScale 0.3s ease-in-out;
+}
+@keyframes cardScale {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.cardscaledown {
+  animation: cardScaleDown 0.4s ease-in-out;
+}
+@keyframes cardScaleDown {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+.card-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.features-ui {
+  font-size: 0.8rem;
+  list-style: disc;
+}
+.job-information-header {
+  background-image: url(../assets/The\ $20\ Laptop\ Stand\ That\ Changed\ My\ WFH\ Game\ _\ Cup\ of\ Jo.jfif);
+  filter: brightness(80%);
+}
+.job-information-gradient {
+  background: linear-gradient(rgb(199, 199, 199), rgb(16, 20, 24));
+  opacity: 0.7;
+}
+.loader {
+  animation: load 0.8s infinite linear;
+}
+@keyframes load {
+  0% {
+    rotate: 0;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+.job-card:nth-child(6n + 1) div .badge-letters {
+  background-color: rgb(43, 179, 161);
+}
+.job-card:nth-child(6n + 2) div .badge-letters {
+  background-color: rgb(191, 50, 88);
+}
+.job-card:nth-child(6n + 3) div .badge-letters {
+  background-color: rgb(230, 107, 26);
+}
+.job-card:nth-child(6n + 4) div .badge-letters {
+  background-color: rgb(134, 87, 156);
+}
+.job-card:nth-child(6n + 5) div .badge-letters {
+  background-color: rgb(60, 159, 81);
+}
+.job-card:nth-child(6n + 6) div .badge-letters {
+  background-color: rgb(31, 104, 182);
+}
+.job-card-active {
+  background-color: var(--color-gray-200);
+}
+@media screen and (min-width: 640px) {
+  .features-ui {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .features-ui {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .features-ui {
+    font-size: 0.8rem;
+  }
+}
